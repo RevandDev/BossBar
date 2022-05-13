@@ -365,7 +365,12 @@ class BossBar
 		$pk->overlay = 0;//Neither. Typical for Mojang: Copy-pasted from Java edition
 		return $pk;
 	}
-
+	
+        public function setColor(int $color): BossBar
+        {
+                $this->color = $color;
+        }
+	
 	public function __toString(): string
 	{
 		return __CLASS__ . " ID: $this->actorId, Players: " . count($this->players) . ", Title: \"$this->title\", Subtitle: \"$this->subTitle\", Percentage: \"" . $this->getPercentage() . "\"";
